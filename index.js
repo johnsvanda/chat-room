@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
+const path = require("path");
 const server = app.listen(PORT, () =>
   console.log("Server is running on port: " + PORT)
 );
-
+const NODE_ENV = "production";
 const io = require("socket.io")(server, { origins: "*:*" });
 
 if (process.env.NODE_ENV === "production") {
